@@ -1,0 +1,28 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="110" height="192" viewBox="0 0 110 192">
+  <filter id="gloss">
+    <feGaussianBlur stdDeviation="2" in="SourceAlpha" result="Blur01"/>
+    <feOffset in="Blur01" dx="1" dy="1" result="Blur02"/>
+    <feSpecularLighting in="Blur01" surfaceScale="1" specularConstant="0.55" 
+                      specularExponent="10" lighting-color="#ddd"
+                      result="Texture01">
+      <fePointLight x="-150" y="-210" z="150"/>
+    </feSpecularLighting>
+    <feComposite in="Texture01" in2="SourceAlpha" operator="in" result="Texture02"/>
+    <feComposite in="Texture02" in2="SourceGraphic" operator="arithmetic" 
+               k1="0" k2="1" k3="1" k4="0" result="Mater01"/>
+    <feMerge>
+      <feMergeNode in="Blur02"/>
+      <feMergeNode in="Mater01"/>
+    </feMerge>
+  </filter>
+  
+  <g id="part">
+    <path d="M55,36  L106,66  L106,126  L55,156  L4,126  L4,66  Z" fill="#ddd" filter="url(#gloss)"/>
+  </g>
+  
+  <use xlink:href="#part" x="-55" y="-98"/>
+  <use xlink:href="#part" x="55" y="-98"/>
+  <use xlink:href="#part" x="-55" y="98"/>
+  <use xlink:href="#part" x="55" y="98"/>
+  
+</svg>
