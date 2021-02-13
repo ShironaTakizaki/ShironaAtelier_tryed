@@ -4,7 +4,7 @@
 
 html {
   background-color: #dcb;
-  background-image: url("HexBackground.svg");
+  background-image: url("/HexBackground.svg");
   background-repeat: repeat;
   font-family: serif;
   height: 100%;
